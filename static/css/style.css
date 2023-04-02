@@ -1,0 +1,24 @@
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: orange;
+}
+
+.header-inner{
+    display: flex;
+    justify-content: space-between;
+}
+
+.list{
+    display: flex;
+
+}
+
+/*.main {
+    background-color: red;
+}*/

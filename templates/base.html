@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/icon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>{% block title %} {% endblock %}</title>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="header-inner">
+                <a class="logo" href="#">
+                    <img src="{{ url_for('static', filename='images/icon.png') }}" alt="logo-img">
+                </a>
+                <nav class="menu">
+                    <ul class="list">
+                        <li class="list-item">
+                            <a class="list-link" href="#">Page_1</a>
+                        </li>
+                        <li class="list-item">
+                            <a class="list-link" href="#">Page_2</a>
+                        </li>
+                        <li class="list-item">
+                            <a class="list-link" href="#">Page_3</a>
+                        </li>
+                        <li class="list-item">
+                            <a class="list-link" href="#">Page_4</a>
+                        </li>
+                        <li class="list-item">
+                            <a class="list-link" href="#">Page_5</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            {% block body %} {% endblock %}
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <h3>FOOTER</h3>
+        </div>
+    </footer>
+
+</body>
+</html>
