@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="{{ url_for('static', filename='images/icon.png') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&display=swap" rel="stylesheet">
     <title>{% block title %} {% endblock %}</title>
 </head>
 <body>
+<div class="wrapper">
 
     <header class="header">
         <div class="container">
@@ -17,13 +21,13 @@
                 <nav class="menu">
                     <ul class="list">
                         <li class="list-item">
-                            <a class="list-link" href="#">Page_1</a>
+                            <a class="list-link" href="/home">Index</a>
                         </li>
                         <li class="list-item">
-                            <a class="list-link" href="#">Page_2</a>
+                            <a class="list-link" href="/about">About</a>
                         </li>
                         <li class="list-item">
-                            <a class="list-link" href="#">Page_3</a>
+                            <a class="list-link" href="/create-article">Create-article</a>
                         </li>
                         <li class="list-item">
                             <a class="list-link" href="#">Page_4</a>
@@ -45,9 +49,9 @@
 
     <footer class="footer">
         <div class="container">
-            <h3>FOOTER</h3>
+            <h3 class="footer">FOOTER</h3>
         </div>
     </footer>
-
+</div>
 </body>
 </html>
