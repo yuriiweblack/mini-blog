@@ -15,7 +15,7 @@ class Article(db.Model):
     date = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
-        return f"Article: {self.id}, {self.username}, {self.title}"
+        return f"Article: {self.id}, {self.username}, {self.title}, {self.text}!!!"
 
 
 with app.app_context():
@@ -39,10 +39,25 @@ def create_article():
         username = request.form['username']
         title = request.form['title']
         text = request.form['text']
-        print(username, title, type(text))
-        return redirect('/home')
+
+        article = Article(username=username, title=title, text=text)
+
+        try:
+            db.session.add(article)
+            db.session.commit()
+            return redirect('/posts')
+        except:
+            return render_template("500.html")
+
     else:
         return render_template("create-article.html")
+
+
+@app.route('/posts')
+def posts():
+    article = Article.query.all()
+    return render_template('posts.html', articles=article)
+
 
 @app.route('/user/<string:name>/<int:id>')
 def user(name, id):

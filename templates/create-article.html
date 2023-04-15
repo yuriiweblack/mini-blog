@@ -5,14 +5,15 @@
 {% endblock %}
 
 {% block body %}
-    <h1>Add Article</h1>
-<form action="/create-article" autocomplete="off" method="post">
+
+<form class="form" action="/create-article" autocomplete="off" method="post">
+    <h1 class="form-title">Add Article</h1>
     <h3>Input Username</h3>
     <input type="text" name="username" placeholder="Username">
     <h3>Input Title</h3>
     <input type="text" name="title" placeholder="Title">
     <h3>Input Text</h3>
     <textarea name="text" placeholder="Text"></textarea><br>
-    <input type="submit" value="SEND">
+    <input class="send" type="submit" value="SEND">
 </form>
 {% endblock %}
