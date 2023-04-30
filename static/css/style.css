@@ -91,7 +91,6 @@ textarea{
     border-radius: 15px;
     padding: 15px;
     margin-bottom: 15px;
-
 }
 
 .send{
@@ -100,4 +99,15 @@ textarea{
 
 .form-title{
     margin: 0px;
+}
+
+.posts-list{
+    border: 8px solid blue;
+    border-radius: 25px;
+    padding: 10px 80px;
+}
+
+.posts{
+    background: aqua;
+    text-align: center;
 }

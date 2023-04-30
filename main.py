@@ -17,6 +17,9 @@ class Article(db.Model):
     def __repr__(self):
         return f"Article: {self.id}, {self.username}, {self.title}, {self.text}!!!"
 
+    def show_type(self):
+        return 'Our type Article'
+
 
 with app.app_context():
     db.create_all()
@@ -41,7 +44,7 @@ def create_article():
         text = request.form['text']
 
         article = Article(username=username, title=title, text=text)
-
+        # print(article.show_type())
         try:
             db.session.add(article)
             db.session.commit()
@@ -55,9 +58,15 @@ def create_article():
 
 @app.route('/posts')
 def posts():
-    article = Article.query.all()
+    article = Article.query.order_by(Article.date.desc()).all()
     return render_template('posts.html', articles=article)
 
+
+@app.route('/posts/<int:id>')
+def posts_detail(id):
+    article = Article.query.get(id)
+    print(article)
+    return render_template('posts_detail.html', article=article)
 
 @app.route('/user/<string:name>/<int:id>')
 def user(name, id):

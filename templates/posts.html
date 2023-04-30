@@ -5,8 +5,22 @@
 {% endblock %}
 
 {% block body %}
+
+<div class="posts">
     <h1>ALL POSTS</h1>
+
     {% for el in articles%}
-        {{el}} <br> <br>
+
+       <ol type="I" class="posts-list">
+            <li>Article: {{el.id}}</li>
+            <li>{{el}}</li>
+            <li>{{el.date.date()}}</li>
+            <a class="button" href="/posts/{{ el.id }}">Detail</a>
+        </ol>
+
     {% endfor%}
+
+
+    {{articles[::-2]}}
+</div>
 {% endblock %}
